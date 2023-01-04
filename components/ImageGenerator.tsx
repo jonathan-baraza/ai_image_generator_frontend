@@ -15,7 +15,7 @@ function ImageGenerator() {
     "Generating please wait..."
   );
   const [generateSuccess, setGenerateSuccess] = useState(false);
-  const [imgLoading, setImgLoading] = useState(true);
+  const [imgLoading, setImgLoading] = useState(false);
 
   const BACKEND_URL = "https://ai-image-generator-k6yf.onrender.com/";
 
@@ -52,7 +52,7 @@ function ImageGenerator() {
       setLoading(false);
       setTimeout(() => {
         setImgLoading(false);
-      }, 3000);
+      }, 6000);
     } catch (error) {
       setLoading(false);
       swal("Error", "Image could not be generated", "error");
@@ -153,6 +153,7 @@ function ImageGenerator() {
         ) : (
           <Loader message={loadingMessage} />
         )}
+        {imgLoading && <Loader message={"Image Loading..."} />}
       </div>
     </>
   );
