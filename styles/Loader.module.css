@@ -1,0 +1,27 @@
+#loadContainer {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes rotateSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loaderIcon {
+  animation-name: rotateSpin;
+  animation-timing-function: linear;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
